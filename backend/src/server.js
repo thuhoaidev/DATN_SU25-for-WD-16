@@ -20,6 +20,11 @@ const blogRoutes = require('./routes/blog');
 const voucherRoutes = require('./routes/voucher');
 const sectionRoutes = require('./routes/section');
 const reviewRoutes = require('./routes/review');
+const userExperienceRoutes = require('./routes/userExperience');
+const dailyCheckinRoutes = require('./routes/dailyCheckin');
+const walletRoutes = require('./routes/wallet');
+const walletTransactionRoutes = require('./routes/walletTransaction');
+const cartRoutes = require('./routes/cart');
 
 dotenv.config({ path: './.env.local' });
 
@@ -55,7 +60,11 @@ app.use('/api/blogs', blogRoutes);
 app.use('/api/vouchers', voucherRoutes);
 app.use('/api/sections', sectionRoutes);
 app.use('/api/reviews', reviewRoutes);
-
+app.use('/api/user-experiences', userExperienceRoutes);
+app.use('/api/daily-checkins', dailyCheckinRoutes);
+app.use('/api/wallets', walletRoutes);
+app.use('/api/wallet-transactions', walletTransactionRoutes);
+app.use('/api/carts', cartRoutes);
 
 app.get('/', (req, res) => {
     res.send('Backend API đang chạy!');
